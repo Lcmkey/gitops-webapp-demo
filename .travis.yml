@@ -1,0 +1,20 @@
+language: node_js
+
+node_js:
+  - "15"
+
+install:
+  - npm ci
+  - npm install -g webpack webpack-cli
+
+script:
+  - npm run build
+  - ls -al ./dist
+
+deploy:
+  provider: pages
+  skip-cleanup: true
+  github-token: $GITHUB_TOKEN
+  local-dir: dist
+  repo: Lcmkey/gitops-webapp-demo.io
+  target_branch: master
