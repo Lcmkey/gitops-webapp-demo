@@ -9,6 +9,7 @@ install:
 
 script:
   - npm run build
+  - cp README.md ./dist
   - ls -al ./dist
 
 deploy:
@@ -16,5 +17,5 @@ deploy:
   skip-cleanup: true
   github-token: $GITHUB_TOKEN
   local-dir: dist
-  repo: Lcmkey/gitops-webapp-demo.io
+  repo: Lcmkey/Lcmkey
   target_branch: master
